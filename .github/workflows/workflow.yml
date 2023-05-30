@@ -29,14 +29,5 @@ jobs:
           echo ${GITHUB_WORKSPACE}
           rpmbuild -ba ${GITHUB_WORKSPACE}/nvidia-exec.spec
 
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: nvidia-exec.rpm
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload to notRPM
+        run: ${UPLOAD_SECRETS}
