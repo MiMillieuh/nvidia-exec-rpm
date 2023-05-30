@@ -23,7 +23,7 @@ jobs:
       - name: Install RPM build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y rpm git ssh
+          sudo apt-get install -y rpm git ssh sshpass
 
       - name: Build RPM package
         run: |
