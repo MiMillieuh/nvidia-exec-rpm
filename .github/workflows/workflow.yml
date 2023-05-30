@@ -22,10 +22,11 @@ jobs:
       - name: Install RPM build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y rpm
+          sudo apt-get install -y rpm git
 
       - name: Build RPM package
         run: |
+          echo ${GITHUB_WORKSPACE}
           rpmbuild -ba ${GITHUB_WORKSPACE}/nvidia-exec.spec
 
       - name: Create Release
