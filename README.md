@@ -1,3 +1,7 @@
+# Why this fork
+
+Well I just want to experiment with GH actions and also to build a rpm of that software for Fedora.
+
 # NVidia eXec - `nvx`
 
 `nvx` is a script to run programs on nvidia optimus setups with power management. `nvx` tries to be extremely simple to install and use, and supports both Xorg and Wayland environments.
