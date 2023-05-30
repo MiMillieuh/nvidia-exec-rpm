@@ -10,6 +10,11 @@ jobs:
   build-and-release:
     name: Build and Release RPM
     runs-on: ubuntu-latest
+    env : 
+      UPLOADERPW: ${{ secrets.UPLOADERPW }}
+      UPLOADERUS: ${{ secrets.UPLOADERUS }}
+      UPLOADERURL: ${{ secrets.UPLOADERURL }}
+    
 
     steps:
       - name: Checkout code
@@ -32,4 +37,4 @@ jobs:
 
       - name: Upload to notRPM
         run: |
-          sshpass -p "${{ secrets.UPLOADERPW }}" scp -o StrictHostKeyChecking=no ${GITHUB_WORKSPACE}/nvidia-exec.rpm ${{ secrets.UPLOADERUS }}@${{ secrets.UPLOADERURL }}:/var/www/html/notrpm/nvidia-exec.rpm
+          sshpass -p "$UPLOADERPW" scp -o StrictHostKeyChecking=no ${GITHUB_WORKSPACE}/nvidia-exec.rpm $UPLOADERUS@$UPLOADERURL:/var/www/html/notrpm/nvidia-exec.rpm
