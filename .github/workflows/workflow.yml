@@ -39,4 +39,4 @@ jobs:
 
       - name: Upload to notRPM
         run: |
-          sshpass -p "$UPLOADERPW" scp -o StrictHostKeyChecking=no /home/runner/rpmbuild/RPMS/nvidia-exec-*.rpm $UPLOADERUS@$UPLOADERURL:/var/www/html/notrpm/nvidia-exec.rpm
+          sshpass -p "$UPLOADERPW" scp -o StrictHostKeyChecking=no /home/runner/rpmbuild/RPMS/x86_64/nvidia-exec-*.rpm $UPLOADERUS@$UPLOADERURL:/var/www/html/notrpm/nvidia-exec.rpm
