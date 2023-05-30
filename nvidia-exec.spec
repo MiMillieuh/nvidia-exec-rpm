@@ -16,10 +16,10 @@ RPM port of pedro00dk s nvidia-exec for nvidia-gpus
 mkdir -p %{buildroot}/usr/bin/
 mkdir -p %{buildroot}/usr/lib/systemd/system/
 mkdir -p %{buildroot}/usr/lib/modprobe.d/
-install -m 755 nvx %{buildroot}/usr/bin/nvx
-install -m 644 nvx.service %{buildroot}/usr/lib/systemd/system/nvx.service
-install -m 644 %{buildroot}/usr/lib/modprobe.d/nvx.conf
-install -m 644 nvx-suspend-restore %{buildroot}/usr/lib/systemd/system-sleep
+install -m 755 %{_sourcedir}/nvx %{buildroot}/usr/bin/nvx
+install -m 644 %{_sourcedir}/nvx.service %{buildroot}/usr/lib/systemd/system/nvx.service
+install -m 644 %{_sourcedir}/nvx.conf %{buildroot}/usr/lib/modprobe.d/nvx.conf
+install -m 644 %{_sourcedir}/nvx-suspend-restore %{buildroot}/usr/lib/systemd/system-sleep
 
 %files
 /usr/bin/nvx
