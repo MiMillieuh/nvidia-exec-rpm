@@ -18,7 +18,7 @@ mkdir -p %{buildroot}/usr/lib/systemd/system/
 mkdir -p %{buildroot}/usr/lib/modprobe.d/
 install -m 755 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx %{buildroot}/usr/bin/nvx
 install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx.service %{buildroot}/usr/lib/systemd/system/nvx.service
-install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx.conf %{buildroot}/usr/lib/modprobe.d/nvx.conf
+install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/modprobe.conf %{buildroot}/usr/lib/modprobe.d/nvx.conf
 install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx-suspend-restore %{buildroot}/usr/lib/systemd/system-sleep
 
 %files
