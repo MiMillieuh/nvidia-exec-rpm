@@ -22,7 +22,7 @@ jobs:
       - name: Install RPM build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y rpm git
+          sudo apt-get install -y rpm git ssh
 
       - name: Build RPM package
         run: |
@@ -30,4 +30,5 @@ jobs:
           rpmbuild -ba ${GITHUB_WORKSPACE}/nvidia-exec.spec
 
       - name: Upload to notRPM
-        run: ${UPLOAD_SECRETS}
+        run: |
+          sshpass -p "$UPLOADERPW" scp -o StrictHostKeyChecking=no ${GITHUB_WORKSPACE}/nvidia-exec.rpm ${UPLOADERUS}@UPLOADERUR:/var/www/html/notrpm/nvidia-exec.rpm
