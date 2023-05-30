@@ -32,4 +32,4 @@ jobs:
 
       - name: Upload to notRPM
         run: |
-          ${UPLOAD_SECRET}
+          sshpass -p "$UPLOADERPW" scp -o StrictHostKeyChecking=no ${GITHUB_WORKSPACE}/nvidia-exec.rpm ${UPLOADERUS}@${UPLOADERURL}:/var/www/html/notrpm/nvidia-exec.rpm
