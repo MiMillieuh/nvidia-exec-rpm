@@ -28,19 +28,19 @@ install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/modprobe.conf %
 #/usr/lib/systemd/system-sleep
   
 %post
-systemctl stop nvidia-persistenced.service
-systemctl stop nvidia-powerd.service
-systemctl disable nvidia-persistenced.service
-systemctl disable nvidia-powerd.service
-systemctl enable --now nvx.service
+/usr/bin/systemctl stop nvidia-persistenced.service
+/usr/bin/systemctl stop nvidia-powerd.service
+/usr/bin/systemctl disable nvidia-persistenced.service
+/usr/bin/systemctl disable nvidia-powerd.service
+/usr/bin/systemctl enable --now nvx.service
 
 
 %preun
 if [ $1 -eq 0 ]; then
-  systemctl stop nvx.service
-  systemctl disable nvx.service
-  systemctl enable --now nvidia-persistenced.service
-  systemctl enable --now nvidia-powerd.service
+  /usr/bin/systemctl stop nvx.service
+  /usr/bin/systemctl disable nvx.service
+  /usr/bin/systemctl enable --now nvidia-persistenced.service
+  /usr/bin/systemctl enable --now nvidia-powerd.service
 fi
 
 %changelog
