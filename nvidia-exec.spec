@@ -16,6 +16,7 @@ RPM port of pedro00dk s nvidia-exec for nvidia-gpus
 mkdir -p %{buildroot}/usr/bin/
 mkdir -p %{buildroot}/usr/lib/systemd/system/
 mkdir -p %{buildroot}/usr/lib/modprobe.d/
+mkdir -p %{buildroot}/usr/lib/systemd/system-preset/
 install -m 755 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx %{buildroot}/usr/bin/nvx
 install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx.service %{buildroot}/usr/lib/systemd/system/nvx.service
 install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/modprobe.conf %{buildroot}/usr/lib/modprobe.d/nvx.conf
