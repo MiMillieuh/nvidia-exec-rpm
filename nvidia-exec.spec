@@ -28,12 +28,19 @@ install -m 644 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvx-suspend-res
 /usr/lib/systemd/system-sleep
   
 %post
+systemctl stop nvidia-persistenced.service
+systemctl stop nvidia-powerd.service
+systemctl disable nvidia-persistenced.service
+systemctl disable nvidia-powerd.service
 systemctl enable --now nvx.service
+
 
 %preun
 if [ $1 -eq 0 ]; then
   systemctl stop nvx.service
   systemctl disable nvx.service
+  systemctl enable --now nvidia-persistenced.service
+  systemctl enable --now nvidia-powerd.service
 fi
 
 %changelog
