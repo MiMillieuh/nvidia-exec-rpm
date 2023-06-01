@@ -1,0 +1,4 @@
+disable nvidia-powerd.service
+disable nvidia-persistenced.service
+
+enable nvx.service
