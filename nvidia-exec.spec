@@ -27,7 +27,7 @@ install -m 664 /home/runner/work/nvidia-exec-rpm/nvidia-exec-rpm/nvidiaexec.pres
 /usr/bin/nvx
 /usr/lib/systemd/system/nvx.service
 /usr/lib/modprobe.d/nvx.conf
-/usr/lib/systemd/99-nvidia-exec.preset 
+/usr/lib/systemd/system-preset/99-nvidia-exec.preset 
 #/usr/lib/systemd/system-sleep
   
 %post
