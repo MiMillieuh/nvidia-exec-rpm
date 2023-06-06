@@ -2,6 +2,22 @@
 
 Well I just want to experiment with GH actions and also to build a rpm of that software for Fedora.
 
+**THIS SOFTWARE COMES WITH NO WARENTY AND IS EXPERIMENTALLY PACKAGED AS RPM UNOFFICIALY**
+
+**ALL CREDITS TO [pedro00dk](https://github.com/pedro00dk)**
+
+# Install on fedora : 
+## repo (recommanded) : 
+
+Add the repo : `sudo wget https://raw.githubusercontent.com/MiMillieuh/NotRPM-Repo/main/notrpm.repo -O /etc/yum.repos.d/notrpm.repo`
+
+install it with `sudo dnf install nvidia-exec`
+
+## RPM (not auto updated) : 
+
+Download it from release.
+
+
 # NVidia eXec - `nvx`
  
 `nvx` is a script to run programs on nvidia optimus setups with power management. `nvx` tries to be extremely simple to install and use, and supports both Xorg and Wayland environments.
