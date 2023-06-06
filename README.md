@@ -17,6 +17,17 @@ install it with `sudo dnf install nvidia-exec`
 
 Download it from release.
 
+## Post install :
+
+enable and disable some services : 
+`systemctl disable nvidia-powerd.service`
+`systemctl disable nvidia-persistenced.service`
+`systemctl disable nvidia-fallback.service`
+`systemctl enable nvx.service`
+
+
+then reboot
+
 
 # NVidia eXec - `nvx`
  
