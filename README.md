@@ -9,9 +9,13 @@ Well I just want to experiment with GH actions and also to build a rpm of that s
 # Install on fedora : 
 ## repo (recommanded) : 
 
-Add the repo : `sudo wget https://raw.githubusercontent.com/MiMillieuh/NotRPM-Repo/main/notrpm.repo -O /etc/yum.repos.d/notrpm.repo`
+Add the repo : 
 
-install it with `sudo dnf install nvidia-exec`
+`sudo wget https://raw.githubusercontent.com/MiMillieuh/NotRPM-Repo/main/notrpm.repo -O /etc/yum.repos.d/notrpm.repo`
+
+install it with :
+
+`sudo dnf install nvidia-exec`
 
 ## RPM (not auto updated) : 
 
@@ -20,9 +24,13 @@ Download it from release.
 ## Post install :
 
 enable and disable some services : 
+
 `systemctl disable nvidia-powerd.service`
+
 `systemctl disable nvidia-persistenced.service`
+
 `systemctl disable nvidia-fallback.service`
+
 `systemctl enable nvx.service`
 
 
